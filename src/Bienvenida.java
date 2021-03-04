@@ -46,6 +46,11 @@ public class Bienvenida extends javax.swing.JFrame {
         });
 
         btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarseActionPerformed(evt);
+            }
+        });
 
         btnIniciarInvitado.setText("Iniciar como invitado");
 
@@ -93,6 +98,12 @@ public class Bienvenida extends javax.swing.JFrame {
         InicioDeSesion ingreso = new InicioDeSesion();
         ingreso.setVisible(true);
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
+
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        // TODO add your handling code here:
+        Registrarse nuevoU = new Registrarse();
+        nuevoU.setVisible(true);
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**
      * @param args the command line arguments
