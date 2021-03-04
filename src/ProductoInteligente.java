@@ -13,7 +13,7 @@ public class ProductoInteligente {
     private String categoria;
     private double precioPorUnidad;
     private int stock;
-    private String compatibilidadAsistenteVirtual;
+    private boolean asistenteVirtualCompatible;
     
     public void setNombre(String nombre){
         this.nombre=nombre;
@@ -27,8 +27,9 @@ public class ProductoInteligente {
     public void setStock(int stock){
         this.stock=stock;
     }
-    public void setCompatibilidadAsistenteVirtual(String compatibilidadAsistenteVirtual){
-        this.compatibilidadAsistenteVirtual=compatibilidadAsistenteVirtual;
+
+    public void setCompatibilidadAsistenteVirtual(boolean compatibilidadAsistenteVirtual) {
+        this.asistenteVirtualCompatible = compatibilidadAsistenteVirtual;
     }
     
     public String getNombre(){
@@ -43,7 +44,10 @@ public class ProductoInteligente {
     public int getStock(){
         return stock;
     }
-    public String getCompatibilidadAsistenteVirtual(){
-        return compatibilidadAsistenteVirtual;
+
+    public boolean isCompatibilidadAsistenteVirtual() {
+        return asistenteVirtualCompatible;
     }
+    
+    
 }
