@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,12 +11,13 @@
  *
  * @author Kanic
  */
-public class Bienvenida extends javax.swing.JFrame {
-
+public class Bienvenida extends javax.swing.JFrame{
+    public static ArrayList<Usuario> users = new ArrayList <>();
+    
     /**
      * Creates new form Interfaz
      */
-    public Bienvenida() {
+    public Bienvenida(){
         initComponents();
     }
 
@@ -68,11 +72,13 @@ public class Bienvenida extends javax.swing.JFrame {
                         .addComponent(lblMensaje))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRegistrarse)
-                            .addComponent(btnIniciarSesion)
-                            .addComponent(btnIniciarInvitado))))
-                .addContainerGap(99, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnIniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnRegistrarse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(btnIniciarInvitado)))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,9 +100,11 @@ public class Bienvenida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+
         // TODO add your handling code here:
         InicioDeSesion ingreso = new InicioDeSesion();
         ingreso.setVisible(true);
+        
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed

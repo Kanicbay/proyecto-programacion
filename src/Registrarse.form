@@ -33,7 +33,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtDirección" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtDireccion" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="txtNombre" min="-2" pref="94" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -57,7 +57,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="lblContraseña" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="pswContraseña" min="-2" pref="130" max="-2" attributes="0"/>
+                      <Component id="pswContrasenia" min="-2" pref="130" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                       <Component id="lblApellido" min="-2" max="-2" attributes="0"/>
@@ -106,7 +106,7 @@
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblDirección" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtDirección" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -123,7 +123,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="pswContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pswContrasenia" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
@@ -185,7 +185,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtCorreo">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtDirecci&#xf3;n">
+    <Component class="javax.swing.JTextField" name="txtDireccion">
     </Component>
     <Component class="javax.swing.JTextField" name="txtNumeroCelular">
     </Component>
@@ -193,12 +193,15 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtUsuario">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="pswContrase&#xf1;a">
+    <Component class="javax.swing.JPasswordField" name="pswContrasenia">
     </Component>
     <Component class="javax.swing.JButton" name="btnGuardar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

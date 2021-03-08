@@ -9,7 +9,7 @@
  * @author usuario
  */
 public class Registrarse extends javax.swing.JFrame {
-
+    Usuario user1;
     /**
      * Creates new form Registrarse
      */
@@ -38,11 +38,11 @@ public class Registrarse extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
-        txtDirección = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
         txtNumeroCelular = new javax.swing.JTextField();
         txtNumeroTelefono = new javax.swing.JTextField();
         txtUsuario = new javax.swing.JTextField();
-        pswContraseña = new javax.swing.JPasswordField();
+        pswContrasenia = new javax.swing.JPasswordField();
         btnGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,6 +67,11 @@ public class Registrarse extends javax.swing.JFrame {
         lblContraseña.setText("Contraseña");
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,7 +86,7 @@ public class Registrarse extends javax.swing.JFrame {
                             .addComponent(lblNombre))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtDirección, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,7 +103,7 @@ public class Registrarse extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblContraseña)
                         .addGap(18, 18, 18)
-                        .addComponent(pswContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(pswContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(lblApellido)
                         .addGroup(layout.createSequentialGroup()
@@ -136,7 +141,7 @@ public class Registrarse extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDirección)
-                    .addComponent(txtDirección, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumeroTelefono)
@@ -150,7 +155,7 @@ public class Registrarse extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblContraseña)
-                    .addComponent(pswContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pswContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnGuardar)
                 .addContainerGap(31, Short.MAX_VALUE))
@@ -158,6 +163,32 @@ public class Registrarse extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        String apellido;
+        String correo;
+        String direccion;
+        double numeroCel;
+        double numeroTelf;
+        String usuario;
+        String contrasenia;
+        
+        nombre = txtNombre.getText();
+        apellido = txtApellido.getText();
+        correo = txtCorreo.getText();
+        direccion = txtDireccion.getText();
+        numeroCel = Double.parseDouble(txtNumeroCelular.getText());
+        numeroTelf = Double.parseDouble(txtNumeroTelefono.getText());
+        usuario = txtUsuario.getText();
+        contrasenia = pswContrasenia.getText();
+        
+        user1 = new Usuario(nombre, apellido, correo, direccion, numeroCel,
+         numeroTelf, usuario, contrasenia);
+        Bienvenida.users.add(user1);
+        
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,10 +236,10 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JLabel lblNumeroTelefono;
     private javax.swing.JLabel lblRegistro;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JPasswordField pswContraseña;
+    private javax.swing.JPasswordField pswContrasenia;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtDirección;
+    private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtNumeroCelular;
     private javax.swing.JTextField txtNumeroTelefono;

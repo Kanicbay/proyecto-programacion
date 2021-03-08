@@ -8,7 +8,7 @@
  *
  * @author usuario
  */
-public class InicioDeSesion extends javax.swing.JFrame {
+public class InicioDeSesion extends javax.swing.JFrame{
 
     /**
      * Creates new form InicioDeSecion
@@ -29,7 +29,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
         lblUsuario = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         lblContraseña = new javax.swing.JLabel();
-        pswContraseña = new javax.swing.JPasswordField();
+        pswContrasenia = new javax.swing.JPasswordField();
         btnAceptar = new javax.swing.JButton();
         lblInicioSesion = new javax.swing.JLabel();
 
@@ -40,6 +40,11 @@ public class InicioDeSesion extends javax.swing.JFrame {
         lblContraseña.setText("Contraseña");
 
         btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
         lblInicioSesion.setText("Inicio de sesión");
 
@@ -56,7 +61,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
                             .addComponent(lblContraseña))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pswContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                            .addComponent(pswContrasenia, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
                             .addComponent(txtUsuario)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(144, 144, 144)
@@ -78,7 +83,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblContraseña)
-                    .addComponent(pswContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pswContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addComponent(btnAceptar)
                 .addContainerGap(69, Short.MAX_VALUE))
@@ -86,6 +91,25 @@ public class InicioDeSesion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        // TODO add your handling code here:
+        String usuario;
+        String contrasenia;
+        
+        usuario = txtUsuario.getText();
+        contrasenia = pswContrasenia.getText();
+        for(int i=0;i<Bienvenida.users.size();i++){
+            System.out.println(Bienvenida.users.get(i).getUsuario());
+            System.out.println(Bienvenida.users.get(i).getContrasenia());
+            if((Bienvenida.users.get(i).iniciarSesion(usuario, contrasenia))==true){
+                System.out.println("Funciona");
+            }
+            else{
+                System.out.println("No funciona xdd");
+            }
+        }
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,7 +154,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
     private javax.swing.JLabel lblContraseña;
     private javax.swing.JLabel lblInicioSesion;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JPasswordField pswContraseña;
+    private javax.swing.JPasswordField pswContrasenia;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

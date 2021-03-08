@@ -1,3 +1,6 @@
+
+import java.util.Arrays;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +11,7 @@
  *
  * @author Kanic
  */
-public class Usuario {
+public class Usuario{
     private String nombre;
     private String apellido;
     private String correo;
@@ -18,6 +21,7 @@ public class Usuario {
     private String usuario;
     private String contrasenia;
     
+    
     public Usuario(String nombre, String apellido, String correo, String direccion,
             double numCelular, double numTelefono, String usuario, String contrasenia){
         this.nombre=nombre;
@@ -26,6 +30,11 @@ public class Usuario {
         this.direccion=direccion;
         this.numCelular=numCelular;
         this.numTelefono=numTelefono;
+        this.usuario=usuario;
+        this.contrasenia=contrasenia;
+    }
+    
+    public Usuario(String usuario, String contrasenia){
         this.usuario=usuario;
         this.contrasenia=contrasenia;
     }
@@ -95,10 +104,17 @@ public class Usuario {
     }
     
     public void crearCuenta(String usuario, String contrasenia){
-        // Buscar como guardar informacion en un txt
+        
     }
     
-    public void iniciarSesion(String usuario, String contrasenia){
-        // Buscar como obtener la informacion de un txt
+    public boolean iniciarSesion(String usuario, String contrasenia){
+        boolean booleano=true;           
+        if((usuario == this.usuario) &&  (contrasenia == this.contrasenia)){
+            booleano = false;
+        }
+        else{
+            booleano = true;
+        }
+        return booleano;
     }
 }
