@@ -46,6 +46,7 @@ public class Registrarse extends javax.swing.JFrame {
         btnGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro");
 
         lblRegistro.setText("Registro");
 

@@ -34,6 +34,7 @@ public class InicioDeSesion extends javax.swing.JFrame{
         lblInicioSesion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Inicio de sesión");
 
         lblUsuario.setText("Usuario");
 
@@ -103,6 +104,9 @@ public class InicioDeSesion extends javax.swing.JFrame{
             System.out.println(Bienvenida.users.get(i).getUsuario());
             System.out.println(Bienvenida.users.get(i).getContrasenia());
             if((Bienvenida.users.get(i).iniciarSesion(usuario, contrasenia))==true){
+                Tienda nuevaT = new Tienda();
+                nuevaT.setVisible(true);
+                nuevaT.setTitle("Tienda para " + usuario);
                 System.out.println("Funciona");
             }
             else{

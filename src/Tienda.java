@@ -1,3 +1,7 @@
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,12 +13,25 @@
  * @author usuario
  */
 public class Tienda extends javax.swing.JFrame {
-
+    
+    int[] stock = {25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 15, 15, 15};
     /**
      * Creates new form Tienda
      */
     public Tienda() {
         initComponents();
+        for(int i=0; i<=stock[0]; i++){
+            cmbAlexa1.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[2]; i++){
+            cmbLED1.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[5]; i++){
+            cmbConsolas1.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[9]; i++){
+            cmbCafeteras1.addItem(String.valueOf(i));
+        }
     }
 
     /**
@@ -26,21 +43,548 @@ public class Tienda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        AsistentesVirtuales = new javax.swing.JFrame();
+        lblAlexa = new javax.swing.JLabel();
+        lblGoogleHome = new javax.swing.JLabel();
+        cmbAlexa = new javax.swing.JComboBox<>();
+        cmbGoogleHome = new javax.swing.JComboBox<>();
+        bntComprar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
+        ProductosHabitacion = new javax.swing.JFrame();
+        lblLED = new javax.swing.JLabel();
+        lblLamparas = new javax.swing.JLabel();
+        lblTV = new javax.swing.JLabel();
+        lblConsola = new javax.swing.JLabel();
+        cmbLED = new javax.swing.JComboBox<>();
+        cmbLamparas = new javax.swing.JComboBox<>();
+        cmbTV = new javax.swing.JComboBox<>();
+        cmbConsolas = new javax.swing.JComboBox<>();
+        bntComprar1 = new javax.swing.JButton();
+        btnRegresar1 = new javax.swing.JButton();
+        ProductosSalaEstar = new javax.swing.JFrame();
+        bntComprar2 = new javax.swing.JButton();
+        btnRegresar2 = new javax.swing.JButton();
+        lblMuebles = new javax.swing.JLabel();
+        lblMesas = new javax.swing.JLabel();
+        lblSillas = new javax.swing.JLabel();
+        cmbMuebles = new javax.swing.JComboBox<>();
+        cmbMesas = new javax.swing.JComboBox<>();
+        cmbSillas = new javax.swing.JComboBox<>();
+        ProductosCocina = new javax.swing.JFrame();
+        bntComprar3 = new javax.swing.JButton();
+        btnRegresar3 = new javax.swing.JButton();
+        lblCafeteras = new javax.swing.JLabel();
+        lblRefrigeradoras = new javax.swing.JLabel();
+        lblCocinas = new javax.swing.JLabel();
+        lblMicroondas = new javax.swing.JLabel();
+        cmbCafeteras = new javax.swing.JComboBox<>();
+        cmbRefrigeradoras = new javax.swing.JComboBox<>();
+        cmbCocinas = new javax.swing.JComboBox<>();
+        cmbMicroondas = new javax.swing.JComboBox<>();
+        pnlAsistentesV = new javax.swing.JPanel();
+        lblAlexa1 = new javax.swing.JLabel();
+        cmbAlexa1 = new javax.swing.JComboBox<>();
+        lblLED1 = new javax.swing.JLabel();
+        cmbLED1 = new javax.swing.JComboBox<>();
+        lblConsola1 = new javax.swing.JLabel();
+        cmbConsolas1 = new javax.swing.JComboBox<>();
+        bntComprar4 = new javax.swing.JButton();
+        lblCafeteras1 = new javax.swing.JLabel();
+        cmbCafeteras1 = new javax.swing.JComboBox<>();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        mntAsistentesV = new javax.swing.JMenuItem();
+        mnProductosH = new javax.swing.JMenu();
+        mntHabitacion = new javax.swing.JMenuItem();
+        mntSalaEstar = new javax.swing.JMenuItem();
+        mntCocina = new javax.swing.JMenuItem();
+
+        AsistentesVirtuales.setTitle("AsistentesVirtuales");
+        AsistentesVirtuales.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        AsistentesVirtuales.setFocusable(false);
+        AsistentesVirtuales.setLocation(new java.awt.Point(0, 0));
+        AsistentesVirtuales.setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
+        AsistentesVirtuales.setSize(new java.awt.Dimension(1066, 439));
+
+        lblAlexa.setText("Alexa");
+
+        lblGoogleHome.setText("Google Home");
+
+        bntComprar.setText("Comprar");
+        bntComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntComprarActionPerformed(evt);
+            }
+        });
+
+        btnRegresar.setText("Regresar");
+
+        javax.swing.GroupLayout AsistentesVirtualesLayout = new javax.swing.GroupLayout(AsistentesVirtuales.getContentPane());
+        AsistentesVirtuales.getContentPane().setLayout(AsistentesVirtualesLayout);
+        AsistentesVirtualesLayout.setHorizontalGroup(
+            AsistentesVirtualesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AsistentesVirtualesLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(AsistentesVirtualesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AsistentesVirtualesLayout.createSequentialGroup()
+                        .addGroup(AsistentesVirtualesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAlexa)
+                            .addComponent(lblGoogleHome))
+                        .addGap(97, 97, 97)
+                        .addGroup(AsistentesVirtualesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbAlexa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbGoogleHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(AsistentesVirtualesLayout.createSequentialGroup()
+                        .addComponent(bntComprar)
+                        .addGap(53, 53, 53)
+                        .addComponent(btnRegresar)))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        AsistentesVirtualesLayout.setVerticalGroup(
+            AsistentesVirtualesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AsistentesVirtualesLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(AsistentesVirtualesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cmbAlexa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAlexa))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGroup(AsistentesVirtualesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGoogleHome)
+                    .addComponent(cmbGoogleHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addGroup(AsistentesVirtualesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntComprar)
+                    .addComponent(btnRegresar))
+                .addGap(59, 59, 59))
+        );
+
+        ProductosHabitacion.setTitle("Productos Habitacion");
+        ProductosHabitacion.setSize(new java.awt.Dimension(600, 600));
+
+        lblLED.setText("Luces LED (2 metros)");
+
+        lblLamparas.setText("Lamparas");
+
+        lblTV.setText("TV");
+
+        lblConsola.setText("Consolas");
+
+        bntComprar1.setText("Comprar");
+        bntComprar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntComprar1ActionPerformed(evt);
+            }
+        });
+
+        btnRegresar1.setText("Regresar");
+
+        javax.swing.GroupLayout ProductosHabitacionLayout = new javax.swing.GroupLayout(ProductosHabitacion.getContentPane());
+        ProductosHabitacion.getContentPane().setLayout(ProductosHabitacionLayout);
+        ProductosHabitacionLayout.setHorizontalGroup(
+            ProductosHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProductosHabitacionLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(ProductosHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(ProductosHabitacionLayout.createSequentialGroup()
+                        .addGroup(ProductosHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblLED)
+                            .addComponent(lblLamparas, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTV, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblConsola, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(85, 85, 85)
+                        .addGroup(ProductosHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbLED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbLamparas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbTV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbConsolas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(ProductosHabitacionLayout.createSequentialGroup()
+                        .addComponent(bntComprar1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegresar1)))
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+        ProductosHabitacionLayout.setVerticalGroup(
+            ProductosHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProductosHabitacionLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(ProductosHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(ProductosHabitacionLayout.createSequentialGroup()
+                        .addGroup(ProductosHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblLED)
+                            .addComponent(cmbLED, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(42, 42, 42)
+                        .addComponent(lblLamparas))
+                    .addComponent(cmbLamparas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(ProductosHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTV)
+                    .addComponent(cmbTV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(ProductosHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblConsola)
+                    .addComponent(cmbConsolas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(ProductosHabitacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntComprar1)
+                    .addComponent(btnRegresar1))
+                .addGap(27, 27, 27))
+        );
+
+        ProductosSalaEstar.setTitle("Productos para la Sala de Estar");
+        ProductosSalaEstar.setSize(new java.awt.Dimension(317, 300));
+
+        bntComprar2.setText("Comprar");
+        bntComprar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntComprar2ActionPerformed(evt);
+            }
+        });
+
+        btnRegresar2.setText("Regresar");
+
+        lblMuebles.setText("Muebles");
+
+        lblMesas.setText("Mesas");
+
+        lblSillas.setText("Sillas");
+
+        javax.swing.GroupLayout ProductosSalaEstarLayout = new javax.swing.GroupLayout(ProductosSalaEstar.getContentPane());
+        ProductosSalaEstar.getContentPane().setLayout(ProductosSalaEstarLayout);
+        ProductosSalaEstarLayout.setHorizontalGroup(
+            ProductosSalaEstarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProductosSalaEstarLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(ProductosSalaEstarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(ProductosSalaEstarLayout.createSequentialGroup()
+                        .addGroup(ProductosSalaEstarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ProductosSalaEstarLayout.createSequentialGroup()
+                                .addComponent(lblMuebles)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cmbMuebles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ProductosSalaEstarLayout.createSequentialGroup()
+                                .addComponent(lblMesas)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cmbMesas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ProductosSalaEstarLayout.createSequentialGroup()
+                                .addComponent(lblSillas)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cmbSillas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(75, 75, 75))
+                    .addGroup(ProductosSalaEstarLayout.createSequentialGroup()
+                        .addComponent(bntComprar2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                        .addComponent(btnRegresar2)
+                        .addGap(54, 54, 54))))
+        );
+        ProductosSalaEstarLayout.setVerticalGroup(
+            ProductosSalaEstarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProductosSalaEstarLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(ProductosSalaEstarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblMuebles)
+                    .addComponent(cmbMuebles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(ProductosSalaEstarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblMesas)
+                    .addComponent(cmbMesas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(ProductosSalaEstarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblSillas)
+                    .addComponent(cmbSillas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(ProductosSalaEstarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntComprar2)
+                    .addComponent(btnRegresar2))
+                .addGap(35, 35, 35))
+        );
+
+        ProductosCocina.setTitle("Productos de Cocina");
+        ProductosCocina.setSize(new java.awt.Dimension(400, 400));
+
+        bntComprar3.setText("Comprar");
+        bntComprar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntComprar3ActionPerformed(evt);
+            }
+        });
+
+        btnRegresar3.setText("Regresar");
+
+        lblCafeteras.setText("Cafeteras");
+
+        lblRefrigeradoras.setText("Refrigeradoras");
+
+        lblCocinas.setText("Cocinas");
+
+        lblMicroondas.setText("Microondas");
+
+        javax.swing.GroupLayout ProductosCocinaLayout = new javax.swing.GroupLayout(ProductosCocina.getContentPane());
+        ProductosCocina.getContentPane().setLayout(ProductosCocinaLayout);
+        ProductosCocinaLayout.setHorizontalGroup(
+            ProductosCocinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProductosCocinaLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(ProductosCocinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bntComprar3)
+                    .addComponent(lblMicroondas)
+                    .addComponent(lblCocinas)
+                    .addComponent(lblRefrigeradoras)
+                    .addComponent(lblCafeteras))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addGroup(ProductosCocinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegresar3)
+                    .addComponent(cmbCafeteras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbRefrigeradoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbCocinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbMicroondas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52))
+        );
+        ProductosCocinaLayout.setVerticalGroup(
+            ProductosCocinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProductosCocinaLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(ProductosCocinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCafeteras)
+                    .addComponent(cmbCafeteras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(ProductosCocinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRefrigeradoras)
+                    .addComponent(cmbRefrigeradoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(ProductosCocinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCocinas)
+                    .addComponent(cmbCocinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(ProductosCocinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblMicroondas)
+                    .addComponent(cmbMicroondas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(ProductosCocinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntComprar3)
+                    .addComponent(btnRegresar3))
+                .addGap(20, 20, 20))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pnlAsistentesV.setBorder(javax.swing.BorderFactory.createTitledBorder("Destacados"));
+
+        lblAlexa1.setText("Alexa");
+
+        lblLED1.setText("Luces LED (2 metros)");
+
+        lblConsola1.setText("Consolas");
+
+        bntComprar4.setText("Comprar");
+        bntComprar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntComprar4ActionPerformed(evt);
+            }
+        });
+
+        lblCafeteras1.setText("Cafeteras");
+
+        javax.swing.GroupLayout pnlAsistentesVLayout = new javax.swing.GroupLayout(pnlAsistentesV);
+        pnlAsistentesV.setLayout(pnlAsistentesVLayout);
+        pnlAsistentesVLayout.setHorizontalGroup(
+            pnlAsistentesVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAsistentesVLayout.createSequentialGroup()
+                .addGroup(pnlAsistentesVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAsistentesVLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(lblLED1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addComponent(cmbLED1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlAsistentesVLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(pnlAsistentesVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlAsistentesVLayout.createSequentialGroup()
+                                .addComponent(lblConsola1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cmbConsolas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAsistentesVLayout.createSequentialGroup()
+                                .addComponent(lblAlexa1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cmbAlexa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnlAsistentesVLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(lblCafeteras1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbCafeteras1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(55, 55, 55))
+            .addGroup(pnlAsistentesVLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(bntComprar4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlAsistentesVLayout.setVerticalGroup(
+            pnlAsistentesVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAsistentesVLayout.createSequentialGroup()
+                .addGroup(pnlAsistentesVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlAsistentesVLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(pnlAsistentesVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cmbAlexa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAlexa1))
+                        .addGap(33, 33, 33)
+                        .addGroup(pnlAsistentesVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblLED1)
+                            .addComponent(cmbLED1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAsistentesVLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlAsistentesVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblConsola1)
+                            .addComponent(cmbConsolas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)))
+                .addGroup(pnlAsistentesVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCafeteras1)
+                    .addComponent(cmbCafeteras1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(bntComprar4)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jMenu1.setText("Secciones");
+
+        mntAsistentesV.setText("Asistentes Virtuales");
+        mntAsistentesV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mntAsistentesVActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mntAsistentesV);
+
+        mnProductosH.setText("Productos Hogar");
+
+        mntHabitacion.setText("Habitacion");
+        mntHabitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mntHabitacionActionPerformed(evt);
+            }
+        });
+        mnProductosH.add(mntHabitacion);
+
+        mntSalaEstar.setText("Sala de Estar");
+        mntSalaEstar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mntSalaEstarActionPerformed(evt);
+            }
+        });
+        mnProductosH.add(mntSalaEstar);
+
+        mntCocina.setText("Cocina");
+        mntCocina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mntCocinaActionPerformed(evt);
+            }
+        });
+        mnProductosH.add(mntCocina);
+
+        jMenu1.add(mnProductosH);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlAsistentesV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlAsistentesV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mntAsistentesVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntAsistentesVActionPerformed
+        // TODO add your handling code here:
+        AsistentesVirtuales.setVisible(true);
+        for(int i=0; i<=stock[0]; i++){
+            cmbAlexa.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[1]; i++){
+            cmbGoogleHome.addItem(String.valueOf(i));
+        }
+    }//GEN-LAST:event_mntAsistentesVActionPerformed
+
+    private void mntHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntHabitacionActionPerformed
+        // TODO add your handling code here:
+        ProductosHabitacion.setVisible(true);
+        for(int i=0; i<=stock[2]; i++){
+            cmbLED.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[3]; i++){
+            cmbLamparas.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[4]; i++){
+            cmbTV.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[5]; i++){
+            cmbConsolas.addItem(String.valueOf(i));
+        }
+    }//GEN-LAST:event_mntHabitacionActionPerformed
+
+    private void mntSalaEstarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntSalaEstarActionPerformed
+        // TODO add your handling code here:
+        ProductosSalaEstar.setVisible(true);
+        for(int i=0; i<=stock[6]; i++){
+            cmbMuebles.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[7]; i++){
+            cmbMesas.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[8]; i++){
+            cmbSillas.addItem(String.valueOf(i));
+        }
+    }//GEN-LAST:event_mntSalaEstarActionPerformed
+
+    private void mntCocinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntCocinaActionPerformed
+        // TODO add your handling code here:
+        ProductosCocina.setVisible(true);
+        for(int i=0; i<=stock[9]; i++){
+            cmbCafeteras.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[10]; i++){
+            cmbRefrigeradoras.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[11]; i++){
+            cmbCocinas.addItem(String.valueOf(i));
+        }
+        for(int i=0; i<=stock[12]; i++){
+            cmbMicroondas.addItem(String.valueOf(i));
+        }
+    }//GEN-LAST:event_mntCocinaActionPerformed
+
+    private void bntComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntComprarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntComprarActionPerformed
+
+    private void bntComprar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntComprar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntComprar1ActionPerformed
+
+    private void bntComprar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntComprar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntComprar2ActionPerformed
+
+    private void bntComprar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntComprar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntComprar3ActionPerformed
+
+    private void bntComprar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntComprar4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntComprar4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +622,60 @@ public class Tienda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame AsistentesVirtuales;
+    private javax.swing.JFrame ProductosCocina;
+    private javax.swing.JFrame ProductosHabitacion;
+    private javax.swing.JFrame ProductosSalaEstar;
+    private javax.swing.JButton bntComprar;
+    private javax.swing.JButton bntComprar1;
+    private javax.swing.JButton bntComprar2;
+    private javax.swing.JButton bntComprar3;
+    private javax.swing.JButton bntComprar4;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnRegresar1;
+    private javax.swing.JButton btnRegresar2;
+    private javax.swing.JButton btnRegresar3;
+    private javax.swing.JComboBox<String> cmbAlexa;
+    private javax.swing.JComboBox<String> cmbAlexa1;
+    private javax.swing.JComboBox<String> cmbCafeteras;
+    private javax.swing.JComboBox<String> cmbCafeteras1;
+    private javax.swing.JComboBox<String> cmbCocinas;
+    private javax.swing.JComboBox<String> cmbConsolas;
+    private javax.swing.JComboBox<String> cmbConsolas1;
+    private javax.swing.JComboBox<String> cmbGoogleHome;
+    private javax.swing.JComboBox<String> cmbLED;
+    private javax.swing.JComboBox<String> cmbLED1;
+    private javax.swing.JComboBox<String> cmbLamparas;
+    private javax.swing.JComboBox<String> cmbMesas;
+    private javax.swing.JComboBox<String> cmbMicroondas;
+    private javax.swing.JComboBox<String> cmbMuebles;
+    private javax.swing.JComboBox<String> cmbRefrigeradoras;
+    private javax.swing.JComboBox<String> cmbSillas;
+    private javax.swing.JComboBox<String> cmbTV;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel lblAlexa;
+    private javax.swing.JLabel lblAlexa1;
+    private javax.swing.JLabel lblCafeteras;
+    private javax.swing.JLabel lblCafeteras1;
+    private javax.swing.JLabel lblCocinas;
+    private javax.swing.JLabel lblConsola;
+    private javax.swing.JLabel lblConsola1;
+    private javax.swing.JLabel lblGoogleHome;
+    private javax.swing.JLabel lblLED;
+    private javax.swing.JLabel lblLED1;
+    private javax.swing.JLabel lblLamparas;
+    private javax.swing.JLabel lblMesas;
+    private javax.swing.JLabel lblMicroondas;
+    private javax.swing.JLabel lblMuebles;
+    private javax.swing.JLabel lblRefrigeradoras;
+    private javax.swing.JLabel lblSillas;
+    private javax.swing.JLabel lblTV;
+    private javax.swing.JMenu mnProductosH;
+    private javax.swing.JMenuItem mntAsistentesV;
+    private javax.swing.JMenuItem mntCocina;
+    private javax.swing.JMenuItem mntHabitacion;
+    private javax.swing.JMenuItem mntSalaEstar;
+    private javax.swing.JPanel pnlAsistentesV;
     // End of variables declaration//GEN-END:variables
 }

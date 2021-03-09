@@ -37,6 +37,7 @@ public class Bienvenida extends javax.swing.JFrame{
         btnIniciarInvitado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("House of the Future");
 
         lblSaludo.setText("Welcome to The House of the Future");
 
@@ -57,6 +58,11 @@ public class Bienvenida extends javax.swing.JFrame{
         });
 
         btnIniciarInvitado.setText("Iniciar como invitado");
+        btnIniciarInvitado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarInvitadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,6 +118,13 @@ public class Bienvenida extends javax.swing.JFrame{
         Registrarse nuevoU = new Registrarse();
         nuevoU.setVisible(true);
     }//GEN-LAST:event_btnRegistrarseActionPerformed
+
+    private void btnIniciarInvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarInvitadoActionPerformed
+        // TODO add your handling code here:
+        Tienda nuevaT = new Tienda();
+        nuevaT.setVisible(true);
+        nuevaT.setTitle("Tienda para invitados");
+    }//GEN-LAST:event_btnIniciarInvitadoActionPerformed
 
     /**
      * @param args the command line arguments
