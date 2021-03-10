@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
  * @author usuario
  */
 public class InicioDeSesion extends javax.swing.JFrame{
-    public static boolean terminarInicioSesion;
     /**
      * Creates new form InicioDeSecion
      */
@@ -103,27 +102,23 @@ public class InicioDeSesion extends javax.swing.JFrame{
         
         usuario = txtUsuario.getText();
         contrasenia = pswContrasenia.getText();
-            
+        
+        // Se evitar que se intente iniciar Sesion si no existen datos agregados por primera vez
         if(Bienvenida.users.isEmpty()){
             JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrectos","Error!",JOptionPane.ERROR_MESSAGE);
             txtUsuario.setText(null);
             pswContrasenia.setText(null);
         }
         else{
+            // Se busca en el arreglo de usuarios con sus datos cual coincide con los datos ingresados en iniciar sesion
             for(int i=0;i<Bienvenida.users.size();i++){
-                System.out.println(Bienvenida.users.get(i).getUsuario());
-                System.out.println(Bienvenida.users.get(i).getContrasenia());
-                System.out.println(usuario);
-                System.out.println(contrasenia);
                 if((Bienvenida.users.get(i).iniciarSesion(usuario, contrasenia))==true){
                     Tienda nuevaT = new Tienda();
                     nuevaT.setVisible(true);
-                    nuevaT.setTitle("Tienda para " + usuario);
+                    nuevaT.setTitle("Disfruta tu Compra! " + usuario);
                     i=Bienvenida.users.size();
-                    terminarInicioSesion=true;
                 }
                 else{
-                    terminarInicioSesion=false;
                     JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrectos","Error!",JOptionPane.ERROR_MESSAGE);
                     txtUsuario.setText(null);
                     pswContrasenia.setText(null);

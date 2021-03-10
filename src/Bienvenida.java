@@ -110,9 +110,6 @@ public class Bienvenida extends javax.swing.JFrame{
         // TODO add your handling code here:
         InicioDeSesion ingreso = new InicioDeSesion();
         ingreso.setVisible(true);
-        if(InicioDeSesion.terminarInicioSesion==true){
-            ingreso.setVisible(false);
-        }
         
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
