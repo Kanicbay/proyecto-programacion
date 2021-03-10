@@ -45,7 +45,7 @@ public class Registrarse extends javax.swing.JFrame {
         pswContrasenia = new javax.swing.JPasswordField();
         btnGuardar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registro");
 
         lblRegistro.setText("Registro");

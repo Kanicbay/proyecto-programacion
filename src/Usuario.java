@@ -108,12 +108,14 @@ public class Usuario{
     }
     
     public boolean iniciarSesion(String usuario, String contrasenia){
-        boolean booleano=true;           
-        if((usuario == this.usuario) &&  (contrasenia == this.contrasenia)){
-            booleano = false;
+        boolean booleano;           
+        if((usuario.equals(this.usuario)) &&  (contrasenia.equals(this.contrasenia))){
+            booleano = true;
+            System.out.println("Entro en el if");
         }
         else{
-            booleano = true;
+            booleano = false;
+            System.out.println("Entro en el else");
         }
         return booleano;
     }

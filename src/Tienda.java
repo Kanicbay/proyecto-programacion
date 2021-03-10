@@ -365,7 +365,7 @@ public class Tienda extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         pnlAsistentesV.setBorder(javax.swing.BorderFactory.createTitledBorder("Destacados"));
 

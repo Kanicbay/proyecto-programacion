@@ -36,7 +36,7 @@ public class Bienvenida extends javax.swing.JFrame{
         btnRegistrarse = new javax.swing.JButton();
         btnIniciarInvitado = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("House of the Future");
 
         lblSaludo.setText("Welcome to The House of the Future");
@@ -110,6 +110,9 @@ public class Bienvenida extends javax.swing.JFrame{
         // TODO add your handling code here:
         InicioDeSesion ingreso = new InicioDeSesion();
         ingreso.setVisible(true);
+        if(InicioDeSesion.terminarInicioSesion==true){
+            ingreso.setVisible(false);
+        }
         
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 

@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,7 +12,7 @@
  * @author usuario
  */
 public class InicioDeSesion extends javax.swing.JFrame{
-
+    public static boolean terminarInicioSesion;
     /**
      * Creates new form InicioDeSecion
      */
@@ -33,7 +36,7 @@ public class InicioDeSesion extends javax.swing.JFrame{
         btnAceptar = new javax.swing.JButton();
         lblInicioSesion = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Inicio de sesión");
 
         lblUsuario.setText("Usuario");
@@ -100,19 +103,36 @@ public class InicioDeSesion extends javax.swing.JFrame{
         
         usuario = txtUsuario.getText();
         contrasenia = pswContrasenia.getText();
-        for(int i=0;i<Bienvenida.users.size();i++){
-            System.out.println(Bienvenida.users.get(i).getUsuario());
-            System.out.println(Bienvenida.users.get(i).getContrasenia());
-            if((Bienvenida.users.get(i).iniciarSesion(usuario, contrasenia))==true){
-                Tienda nuevaT = new Tienda();
-                nuevaT.setVisible(true);
-                nuevaT.setTitle("Tienda para " + usuario);
-                System.out.println("Funciona");
-            }
-            else{
-                System.out.println("No funciona xdd");
-            }
+            
+        if(Bienvenida.users.isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrectos","Error!",JOptionPane.ERROR_MESSAGE);
+            txtUsuario.setText(null);
+            pswContrasenia.setText(null);
         }
+        else{
+            for(int i=0;i<Bienvenida.users.size();i++){
+                System.out.println(Bienvenida.users.get(i).getUsuario());
+                System.out.println(Bienvenida.users.get(i).getContrasenia());
+                System.out.println(usuario);
+                System.out.println(contrasenia);
+                if((Bienvenida.users.get(i).iniciarSesion(usuario, contrasenia))==true){
+                    Tienda nuevaT = new Tienda();
+                    nuevaT.setVisible(true);
+                    nuevaT.setTitle("Tienda para " + usuario);
+                    i=Bienvenida.users.size();
+                    terminarInicioSesion=true;
+                }
+                else{
+                    terminarInicioSesion=false;
+                    JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrectos","Error!",JOptionPane.ERROR_MESSAGE);
+                    txtUsuario.setText(null);
+                    pswContrasenia.setText(null);
+                }
+            }
+        
+        }
+        
+        
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
