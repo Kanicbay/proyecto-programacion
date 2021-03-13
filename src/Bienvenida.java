@@ -1,5 +1,10 @@
 
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,8 +22,16 @@ public class Bienvenida extends javax.swing.JFrame{
     /**
      * Creates new form Interfaz
      */
+    FondoPanel fondo = new FondoPanel();
+
+    
     public Bienvenida(){
+        this.setContentPane(fondo);
         initComponents();
+        this.setTitle("The House of the Future Store");
+        this.setLocationRelativeTo(Bienvenida.this);
+        
+        
     }
 
     /**
@@ -30,18 +43,12 @@ public class Bienvenida extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblSaludo = new javax.swing.JLabel();
-        lblMensaje = new javax.swing.JLabel();
         btnIniciarSesion = new javax.swing.JButton();
         btnRegistrarse = new javax.swing.JButton();
         btnIniciarInvitado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("House of the Future");
-
-        lblSaludo.setText("Welcome to The House of the Future");
-
-        lblMensaje.setText("Seleccione la opción que desea para comenzar");
 
         btnIniciarSesion.setText("Iniciar sesión");
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -69,37 +76,26 @@ public class Bienvenida extends javax.swing.JFrame{
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(137, 137, 137)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(lblSaludo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(lblMensaje))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
+                    .addComponent(btnIniciarInvitado, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnIniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRegistrarse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(btnIniciarInvitado)))
-                .addContainerGap(73, Short.MAX_VALUE))
+                            .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(lblSaludo)
-                .addGap(18, 18, 18)
-                .addComponent(lblMensaje)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(167, Short.MAX_VALUE)
                 .addComponent(btnIniciarSesion)
                 .addGap(18, 18, 18)
                 .addComponent(btnRegistrarse)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnIniciarInvitado)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addGap(98, 98, 98))
         );
 
         pack();
@@ -168,7 +164,17 @@ public class Bienvenida extends javax.swing.JFrame{
     private javax.swing.JButton btnIniciarInvitado;
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JButton btnRegistrarse;
-    private javax.swing.JLabel lblMensaje;
-    private javax.swing.JLabel lblSaludo;
     // End of variables declaration//GEN-END:variables
+    
+    class FondoPanel extends JPanel{
+        private Image imagen;
+        @Override
+        public void paint(Graphics g){
+          imagen= new ImageIcon(getClass().getResource("/imagenes/Ingreso2.jpeg")).getImage(); 
+          g.drawImage(imagen, 0, 0, getWidth(),getHeight(),this);
+          setOpaque(false);
+          super.paint(g);
+        }
+    }
+    
 }
