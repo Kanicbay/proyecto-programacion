@@ -2,6 +2,7 @@
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /*
@@ -247,6 +248,8 @@ public class Registrarse extends javax.swing.JFrame {
         user1 = new Usuario(nombre, apellido, correo, direccion, numeroCel,
          numeroTelf, usuario, contrasenia);
         Bienvenida.users.add(user1);
+        JOptionPane.showMessageDialog(rootPane,"Registro Exitoso!");
+        this.dispose();
         
     }//GEN-LAST:event_btnGuardarActionPerformed
 

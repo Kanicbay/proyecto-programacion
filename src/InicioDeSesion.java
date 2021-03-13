@@ -129,10 +129,13 @@ public class InicioDeSesion extends javax.swing.JFrame{
             // Se busca en el arreglo de usuarios con sus datos cual coincide con los datos ingresados en iniciar sesion
             for(int i=0;i<Bienvenida.users.size();i++){
                 if((Bienvenida.users.get(i).iniciarSesion(usuario, contrasenia))==true){
+                    JOptionPane.showMessageDialog(rootPane,"Ingreso Exitoso!");
                     Tienda nuevaT = new Tienda();
                     nuevaT.setVisible(true);
                     nuevaT.setTitle("Disfruta tu Compra! " + usuario);
                     i=Bienvenida.users.size();
+                    this.dispose();
+                    
                 }
                 else{
                     JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrectos","Error!",JOptionPane.ERROR_MESSAGE);
