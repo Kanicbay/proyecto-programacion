@@ -8,17 +8,19 @@
  *
  * @author SAMIRZM
  */
-public class AscesorComercial {
+public class AsesorComercial {
     private String nombre;
     private String apellido;
-    private int numCelular;
-    private int numTelefono;
+    private String numCelular;
+    private String numTelefono;
+    private String correo;
     
-    public AscesorComercial(String nombre, String apellido, int numeCelular, int numTelefono){
+    public AsesorComercial(String nombre, String apellido, String numeCelular, String numTelefono, String correo){
         this.nombre=nombre;
         this.apellido=apellido;
-        this.numCelular=numCelular;
+        this.numCelular=numeCelular;
         this.numTelefono=numTelefono;
+        this.correo=correo;
     }
     
     public void setNombre(String nombre){
@@ -27,10 +29,10 @@ public class AscesorComercial {
     public void setApellido(String apellido){
         this.apellido=apellido;
     }
-    public void setNumCelular(int numCelular){
+    public void setNumCelular(String numCelular){
         this.numCelular=numCelular;
     }
-    public void setNumTelefono(int numTelefono){
+    public void setNumTelefono(String numTelefono){
         this.numTelefono=numTelefono;
     }
     
@@ -40,11 +42,19 @@ public class AscesorComercial {
     public String getApellido(){
         return apellido;
     }
-    public int getNumCelular(){
+    public String getNumCelular(){
         return numCelular;
     }
-    public int getNumTelefono(){
+    public String getNumTelefono(){
         return numTelefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     @Override
