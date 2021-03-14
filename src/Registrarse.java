@@ -16,7 +16,7 @@ import javax.swing.JPanel;
  * @author usuario
  */
 public class Registrarse extends javax.swing.JFrame {
-    Usuario user1;
+    public static Usuario user1;
     /**
      * Creates new form Registrarse
      */

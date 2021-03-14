@@ -16,6 +16,7 @@ import javax.swing.JPanel;
  * @author usuario
  */
 public class InicioDeSesion extends javax.swing.JFrame{
+    public static Usuario user2;
     /**
      * Creates new form InicioDeSecion
      */
@@ -129,6 +130,7 @@ public class InicioDeSesion extends javax.swing.JFrame{
             // Se busca en el arreglo de usuarios con sus datos cual coincide con los datos ingresados en iniciar sesion
             for(int i=0;i<Bienvenida.users.size();i++){
                 if((Bienvenida.users.get(i).iniciarSesion(usuario, contrasenia))==true){
+                    user2 = Bienvenida.users.get(i);
                     JOptionPane.showMessageDialog(rootPane,"Ingreso Exitoso!");
                     Tienda nuevaT = new Tienda();
                     nuevaT.setVisible(true);

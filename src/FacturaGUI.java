@@ -1,8 +1,10 @@
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,16 +17,28 @@ import javax.swing.JPanel;
  * @author usuario
  */
 public class FacturaGUI extends javax.swing.JFrame {
-
+   
     /**
      * Creates new form FacturaGUI
      */
+    DefaultTableModel modeloTabla;
     FondoPanel fondo = new FondoPanel();
     public FacturaGUI() {
         this.setContentPane(fondo);
+
         initComponents();
+        modeloTabla = new DefaultTableModel();
+        modeloTabla.addColumn("Producto");
+        modeloTabla.addColumn("Categoría");
+        modeloTabla.addColumn("Asistentes Virtuales Compatibles");
+        modeloTabla.addColumn("Precio Unitario");
+        modeloTabla.addColumn("Stock Comprado");
+        modeloTabla.addColumn("Precio Total Producto");
+        tblFactura.setModel(modeloTabla);
         this.setTitle("The House of the Future Store");
         this.setLocationRelativeTo(FacturaGUI.this);
+        
+        
     }
 
     /**
@@ -37,18 +51,19 @@ public class FacturaGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btnFactura = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblFactura = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         txaFactura = new javax.swing.JTextArea();
-        btnFactura = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txaFinal = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 40)); // NOI18N
         jLabel1.setText("Factura");
-
-        txaFactura.setColumns(20);
-        txaFactura.setRows(5);
-        jScrollPane1.setViewportView(txaFactura);
 
         btnFactura.setFont(new java.awt.Font("Dialog", 1, 25)); // NOI18N
         btnFactura.setText("Generar Factura");
@@ -58,6 +73,27 @@ public class FacturaGUI extends javax.swing.JFrame {
             }
         });
 
+        tblFactura.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(tblFactura);
+
+        txaFactura.setColumns(20);
+        txaFactura.setRows(5);
+        jScrollPane1.setViewportView(txaFactura);
+
+        txaFinal.setColumns(20);
+        txaFinal.setRows(5);
+        jScrollPane3.setViewportView(txaFinal);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -65,26 +101,34 @@ public class FacturaGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(btnFactura)
-                        .addGap(0, 183, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(btnFactura))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(198, 198, 198)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jScrollPane1)))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jScrollPane3))))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(198, 198, 198)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addGap(7, 7, 7)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(btnFactura)
                 .addGap(20, 20, 20))
         );
@@ -93,6 +137,17 @@ public class FacturaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
+        txaFactura.setText("Nombres: "+ InicioDeSesion.user2.getNombre()+"\n"+"Apellidos: "+InicioDeSesion.user2.getApellido()+
+                "\n"+"Usuario: "+InicioDeSesion.user2.getUsuario()+"\n"+"\n"+"GRACIAS POR SU COMPRA!");
+        for(int i=0;i<Tienda.productosInteligentes.size();i++){
+            if(Tienda.productosInteligentes.get(i).getStockComprado()!=0){
+                modeloTabla.addRow(new Object[] { Tienda.productosInteligentes.get(i).getNombre(),Tienda.productosInteligentes.get(i).getCategoria(),
+                    Tienda.productosInteligentes.get(i).getAsistenteVirtualCompatible(),Tienda.productosInteligentes.get(i).getPrecioPorUnidad(),
+                    Tienda.productosInteligentes.get(i).getStockComprado(),Tienda.fct1.obtenerTotalAPagarPorProducto(i)});
+            }
+        }
+        txaFinal.setText("Precio Total a Pagar: "+Tienda.fct1.obtenerTotalAPagar());
+        btnFactura.setEnabled(false);
         
     }//GEN-LAST:event_btnFacturaActionPerformed
 
@@ -136,7 +191,11 @@ public class FacturaGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnFactura;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable tblFactura;
     private javax.swing.JTextArea txaFactura;
+    private javax.swing.JTextArea txaFinal;
     // End of variables declaration//GEN-END:variables
     class FondoPanel extends JPanel{
         private Image imagen;
