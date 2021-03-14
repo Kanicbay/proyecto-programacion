@@ -50,8 +50,7 @@ public class Tienda extends javax.swing.JFrame {
     
     
     public Tienda() {
-        this.fondo = new FondoPanel();
-        
+        this.fondo = new FondoPanel();   
         this.setContentPane(fondo);
         initComponents();
         productosInteligentes.add(alexa);       //0
@@ -145,7 +144,6 @@ public class Tienda extends javax.swing.JFrame {
         jPanel15 = new FondoPanel();
         bntGuardarSeccionHabitacion = new javax.swing.JButton();
         ProductosSalaEstar = new javax.swing.JFrame();
-        javax.swing.JPanel jPanel26 = new FondoPanel();
         jPanel27 = new FondoPanel();
         jPanel18 = new FondoPanel();
         lblSillas = new javax.swing.JLabel();
@@ -222,7 +220,7 @@ public class Tienda extends javax.swing.JFrame {
         mntSalaEstar = new javax.swing.JMenuItem();
         mntCocina = new javax.swing.JMenuItem();
 
-        AsistentesVirtuales.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        AsistentesVirtuales.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         AsistentesVirtuales.setTitle("AsistentesVirtuales");
         AsistentesVirtuales.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         AsistentesVirtuales.setFocusable(false);
@@ -386,7 +384,7 @@ public class Tienda extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        ProductosHabitacion.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        ProductosHabitacion.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ProductosHabitacion.setTitle("Productos Habitacion");
         ProductosHabitacion.setSize(new java.awt.Dimension(514, 750));
 
@@ -650,10 +648,10 @@ public class Tienda extends javax.swing.JFrame {
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        ProductosSalaEstar.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        ProductosSalaEstar.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         ProductosSalaEstar.setTitle("Productos para la Sala de Estar");
         ProductosSalaEstar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ProductosSalaEstar.setSize(new java.awt.Dimension(770, 500));
+        ProductosSalaEstar.setSize(new java.awt.Dimension(770, 470));
 
         jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
@@ -855,28 +853,17 @@ public class Tienda extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
-        jPanel26.setLayout(jPanel26Layout);
-        jPanel26Layout.setHorizontalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel26Layout.setVerticalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout ProductosSalaEstarLayout = new javax.swing.GroupLayout(ProductosSalaEstar.getContentPane());
         ProductosSalaEstar.getContentPane().setLayout(ProductosSalaEstarLayout);
         ProductosSalaEstarLayout.setHorizontalGroup(
             ProductosSalaEstarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         ProductosSalaEstarLayout.setVerticalGroup(
             ProductosSalaEstarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ProductosSalaEstarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         ProductosCocina.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1157,7 +1144,7 @@ public class Tienda extends javax.swing.JFrame {
             .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationByPlatform(true);
         setResizable(false);
 
@@ -1630,6 +1617,8 @@ public class Tienda extends javax.swing.JFrame {
         productosInteligentes.get(11).setStockComprado(cocina);
         productosInteligentes.get(12).setStockComprado(microondas);
         productosInteligentes.get(13).setStockComprado(refrigeradora);
+        
+        ProductosCocina.dispose();
     }//GEN-LAST:event_bntGuardarSeleccionCocinaActionPerformed
 
     /**

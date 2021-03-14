@@ -236,20 +236,50 @@ public class Registrarse extends javax.swing.JFrame {
         String usuario;
         String contrasenia;
         
-        nombre = txtNombre.getText();
-        apellido = txtApellido.getText();
-        correo = txtCorreo.getText();
-        direccion = txtDireccion.getText();
-        numeroCel = Double.parseDouble(txtNumeroCelular.getText());
-        numeroTelf = Double.parseDouble(txtNumeroTelefono.getText());
-        usuario = txtUsuario.getText();
-        contrasenia = pswContrasenia.getText();
+        try{
+            if(txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty() || txtCorreo.getText().isEmpty() ||
+                  txtDireccion.getText().isEmpty() || txtNumeroCelular.getText().isEmpty() || txtNumeroTelefono.getText().isEmpty()
+                 || txtUsuario.getText().isEmpty() || pswContrasenia.getText().isEmpty()){
+                JOptionPane.showMessageDialog(rootPane, "Existen Campos Vacíos!","Error!",JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                int n=1;
+                nombre = txtNombre.getText();
+                apellido = txtApellido.getText();
+                correo = txtCorreo.getText();
+                direccion = txtDireccion.getText();
+                numeroCel = Double.parseDouble(txtNumeroCelular.getText());
+                numeroTelf = Double.parseDouble(txtNumeroTelefono.getText());
+                usuario = txtUsuario.getText();
+                contrasenia = pswContrasenia.getText();
+                for(int i=0;i<Bienvenida.users.size();i++){
+                    if(correo.equals(Bienvenida.users.get(i).getCorreo())==true){
+                        n=2;
+                        i=Bienvenida.users.size();
+                    }
+                }
+                if(n==2){
+                    JOptionPane.showMessageDialog(rootPane, "Ya existe una cuenta registrada con este correo","Error!",JOptionPane.ERROR_MESSAGE);
+                }else{
+                    if(n==1){
+                        user1 = new Usuario(nombre, apellido, correo, direccion, numeroCel,
+                        numeroTelf, usuario, contrasenia);
+                        Bienvenida.users.add(user1);
+                        JOptionPane.showMessageDialog(rootPane,"Registro Exitoso!");
+                        this.dispose();
+                    }
+                }
+                
+            }
+        }
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(rootPane, "Ingrese los datos correctamente","Error!",JOptionPane.ERROR_MESSAGE);
+        }
+        catch(NullPointerException e){
+            JOptionPane.showMessageDialog(rootPane,"Ingrese los datos correctamente","Error!",JOptionPane.ERROR_MESSAGE);
+        }
         
-        user1 = new Usuario(nombre, apellido, correo, direccion, numeroCel,
-         numeroTelf, usuario, contrasenia);
-        Bienvenida.users.add(user1);
-        JOptionPane.showMessageDialog(rootPane,"Registro Exitoso!");
-        this.dispose();
+        
         
     }//GEN-LAST:event_btnGuardarActionPerformed
 

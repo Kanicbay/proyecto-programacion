@@ -117,36 +117,50 @@ public class InicioDeSesion extends javax.swing.JFrame{
         String usuario;
         String contrasenia;
         
-        usuario = txtUsuario.getText();
-        contrasenia = pswContrasenia.getText();
-        
-        // Se evitar que se intente iniciar Sesion si no existen datos agregados por primera vez
-        if(Bienvenida.users.isEmpty()){
-            JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrectos","Error!",JOptionPane.ERROR_MESSAGE);
-            txtUsuario.setText(null);
-            pswContrasenia.setText(null);
-        }
-        else{
-            // Se busca en el arreglo de usuarios con sus datos cual coincide con los datos ingresados en iniciar sesion
-            for(int i=0;i<Bienvenida.users.size();i++){
-                if((Bienvenida.users.get(i).iniciarSesion(usuario, contrasenia))==true){
-                    user2 = Bienvenida.users.get(i);
-                    JOptionPane.showMessageDialog(rootPane,"Ingreso Exitoso!");
-                    Tienda nuevaT = new Tienda();
-                    nuevaT.setVisible(true);
-                    nuevaT.setTitle("Disfruta tu Compra! " + usuario);
-                    i=Bienvenida.users.size();
-                    this.dispose();
-                    
-                }
-                else{
+        try{
+            if(txtUsuario.getText().isEmpty() || pswContrasenia.getText().isEmpty()){
+                JOptionPane.showMessageDialog(rootPane, "Existen Campos Vacíos!","Error!",JOptionPane.ERROR_MESSAGE);
+            }else{
+                usuario = txtUsuario.getText();
+                contrasenia = pswContrasenia.getText();
+
+                // Se evitar que se intente iniciar Sesion si no existen datos agregados por primera vez
+                if(Bienvenida.users.isEmpty()){
                     JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrectos","Error!",JOptionPane.ERROR_MESSAGE);
                     txtUsuario.setText(null);
                     pswContrasenia.setText(null);
                 }
+                else{
+                    // Se busca en el arreglo de usuarios con sus datos cual coincide con los datos ingresados en iniciar sesion
+                    for(int i=0;i<Bienvenida.users.size();i++){
+                        if((Bienvenida.users.get(i).iniciarSesion(usuario, contrasenia))==true){
+                            user2 = Bienvenida.users.get(i);
+                            JOptionPane.showMessageDialog(rootPane,"Ingreso Exitoso!");
+                            Tienda nuevaT = new Tienda();
+                            nuevaT.setVisible(true);
+                            nuevaT.setTitle("Disfruta tu Compra! " + usuario);
+                            i=Bienvenida.users.size();
+                            this.dispose();
+
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(rootPane, "Usuario o contraseña incorrectos","Error!",JOptionPane.ERROR_MESSAGE);
+                            txtUsuario.setText(null);
+                            pswContrasenia.setText(null);
+                        }
+                    }
+
+                } 
             }
-        
+            
         }
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(rootPane, "Ingrese los datos correctamente","Error!",JOptionPane.ERROR_MESSAGE);
+        }
+        catch(NullPointerException e){
+            JOptionPane.showMessageDialog(rootPane,"Ingrese los datos correctamente","Error!",JOptionPane.ERROR_MESSAGE);
+        }
+        
         
         
     }//GEN-LAST:event_btnAceptarActionPerformed

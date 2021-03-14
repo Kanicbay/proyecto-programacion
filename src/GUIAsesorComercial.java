@@ -60,7 +60,7 @@ public class GUIAsesorComercial extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txaAsesores = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
         setResizable(false);
 

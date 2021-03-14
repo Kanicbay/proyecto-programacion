@@ -42,7 +42,7 @@ public class Bienvenida extends javax.swing.JFrame{
 
         btnIniciarSesion = new javax.swing.JButton();
         btnRegistrarse = new javax.swing.JButton();
-        btnIniciarInvitado = new javax.swing.JButton();
+        btnBuscarAsesorComercial = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("House of the Future");
@@ -62,10 +62,10 @@ public class Bienvenida extends javax.swing.JFrame{
             }
         });
 
-        btnIniciarInvitado.setText("Iniciar como invitado");
-        btnIniciarInvitado.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarAsesorComercial.setText("Buscar Asesor Comercial");
+        btnBuscarAsesorComercial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIniciarInvitadoActionPerformed(evt);
+                btnBuscarAsesorComercialActionPerformed(evt);
             }
         });
 
@@ -81,8 +81,8 @@ public class Bienvenida extends javax.swing.JFrame{
                 .addContainerGap(151, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnIniciarInvitado)
-                .addGap(134, 134, 134))
+                .addComponent(btnBuscarAsesorComercial)
+                .addGap(115, 115, 115))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,7 +92,7 @@ public class Bienvenida extends javax.swing.JFrame{
                 .addGap(13, 13, 13)
                 .addComponent(btnRegistrarse)
                 .addGap(18, 18, 18)
-                .addComponent(btnIniciarInvitado)
+                .addComponent(btnBuscarAsesorComercial)
                 .addGap(91, 91, 91))
         );
 
@@ -113,12 +113,13 @@ public class Bienvenida extends javax.swing.JFrame{
         nuevoU.setVisible(true);
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
-    private void btnIniciarInvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarInvitadoActionPerformed
+    private void btnBuscarAsesorComercialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAsesorComercialActionPerformed
         // TODO add your handling code here:
-        Tienda nuevaT = new Tienda();
-        nuevaT.setVisible(true);
-        nuevaT.setTitle("Tienda para invitados");
-    }//GEN-LAST:event_btnIniciarInvitadoActionPerformed
+        GUIAsesorComercial asc = new GUIAsesorComercial();
+        asc.setVisible(true);
+        asc.setTitle("Moderniza tu Casa!");
+       
+    }//GEN-LAST:event_btnBuscarAsesorComercialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,7 +160,7 @@ public class Bienvenida extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnIniciarInvitado;
+    private javax.swing.JButton btnBuscarAsesorComercial;
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JButton btnRegistrarse;
     // End of variables declaration//GEN-END:variables
